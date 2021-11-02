@@ -21,6 +21,6 @@ public class DevicesDomBuilderTest {
     @Test
     public void testBuildSetDevices() throws DeviceException {
         domBuilder.buildSetDevices(PATH_TO_XML_FILE);
-        Assert.assertEquals(domBuilder.devices.size(), QUANTITY_OF_ENTITY);
+        Assert.assertEquals(domBuilder.getDevices().size(), QUANTITY_OF_ENTITY);
     }
 }

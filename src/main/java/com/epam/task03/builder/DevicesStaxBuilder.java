@@ -7,7 +7,6 @@ import java.util.Set;
 
 public class DevicesStaxBuilder extends AbstractDeviceBuilder{
     @Override
-    public Set<Device> buildSetDevices(String path) throws DeviceException {
-        return null;
+    public void buildSetDevices(String path) throws DeviceException {
     }
 }

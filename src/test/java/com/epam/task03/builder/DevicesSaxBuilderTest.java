@@ -19,6 +19,6 @@ public class DevicesSaxBuilderTest {
     @Test
     public void testBuildSetDevices() throws DeviceException {
         saxBuilder.buildSetDevices(PATH_TO_XML_FILE);
-        Assert.assertEquals(saxBuilder.devices.size(), QUANTITY_OF_ENTITY);
+        Assert.assertEquals(saxBuilder.getDevices().size(), QUANTITY_OF_ENTITY);
     }
 }

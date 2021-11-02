@@ -7,5 +7,9 @@ import java.util.Set;
 
 public abstract class AbstractDeviceBuilder {
     protected Set<Device> devices;
-    abstract public Set<Device> buildSetDevices(String path) throws DeviceException;
+    abstract public void buildSetDevices(String path) throws DeviceException;
+
+    public Set<Device> getDevices() {
+        return devices;
+    }
 }

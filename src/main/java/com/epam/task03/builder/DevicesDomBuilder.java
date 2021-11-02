@@ -14,10 +14,15 @@ import java.util.Set;
 
 public class DevicesDomBuilder extends AbstractDeviceBuilder {
 
-    Set<Device> devices = new HashSet<>();
+    private Set<Device> devices = new HashSet<>();
 
     @Override
-    public Set<Device> buildSetDevices(String path) throws DeviceException {
+    public Set<Device> getDevices() {
+        return devices;
+    }
+
+    @Override
+    public void buildSetDevices(String path) throws DeviceException {
         File file = new File(path);
         Document doc;
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
@@ -69,6 +74,5 @@ public class DevicesDomBuilder extends AbstractDeviceBuilder {
         } catch (Exception e) {
             throw new DeviceException(e);
         }
-        return null;
     }
 }

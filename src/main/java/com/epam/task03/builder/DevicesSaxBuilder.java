@@ -12,22 +12,15 @@ import java.util.Set;
 
 public class DevicesSaxBuilder extends AbstractDeviceBuilder{
 
-    Set<Device> devices = new HashSet<>();
+    private Set<Device> devices = new HashSet<>();
 
-    private DevicesHandler devicesHandler;
-
-    public DevicesSaxBuilder() {
-        devicesHandler = new DevicesHandler();
-    }
-
+    @Override
     public Set<Device> getDevices() {
-        super.devices = devicesHandler.getDevices();
-        devices = devicesHandler.getDevices();
         return devices;
     }
 
     @Override
-    public Set<Device> buildSetDevices(String path) throws DeviceException {
+    public void buildSetDevices(String path) throws DeviceException {
         File file = new File(path);
         SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
         SAXParser saxParser;
@@ -43,8 +36,5 @@ public class DevicesSaxBuilder extends AbstractDeviceBuilder{
             throw new DeviceException(e);
         }
         devices = devicesHandler.getDevices();
-        return devices;
     }
-
-
 }
