@@ -27,13 +27,11 @@ public class DevicesHandler extends DefaultHandler {
     public void startElement(String uri, String localName, String qName, Attributes attributes) {
         currentValue.setLength(0);
         if (qName.equalsIgnoreCase("integral-device")) {
-            currentPeripheralDevice = null;
             currentIntegralDevice = new IntegralDevice();
             String id = attributes.getValue("id");
             currentIntegralDevice.setId(id);
         }
         if (qName.equalsIgnoreCase("peripheral-device")) {
-            currentIntegralDevice = null;
             currentPeripheralDevice = new PeripheralDevice();
             String id = attributes.getValue("id");
             currentPeripheralDevice.setId(id);
@@ -70,6 +68,7 @@ public class DevicesHandler extends DefaultHandler {
                     break;
                 case "integral-device":
                     devices.add(currentIntegralDevice);
+                    currentIntegralDevice = null;
                     break;
             }
         }
@@ -104,6 +103,7 @@ public class DevicesHandler extends DefaultHandler {
                     break;
                 case "peripheral-device":
                     devices.add(currentPeripheralDevice);
+                    currentPeripheralDevice = null;
                     break;
             }
         }

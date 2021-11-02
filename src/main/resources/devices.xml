@@ -48,5 +48,17 @@
         <peripheral-device-port>USB</peripheral-device-port>
     </peripheral-device>
 
+    <integral-device id = '5'>
+        <name>Memory 8Gb</name>
+        <origin>China</origin>
+        <launch-time>2021-06</launch-time>
+        <price>60</price>
+        <power-consumption>3</power-consumption>
+        <cooling>false</cooling>
+        <critical>false</critical>
+        <integral-device-type>RAM</integral-device-type>
+    </integral-device>
+
+
 
 </devices>

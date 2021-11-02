@@ -10,7 +10,7 @@ public class DevicesSaxBuilderTest {
 
     private final String PATH_TO_XML_FILE = "./src/test/resources/testDevices.xml";
 
-    private final int QUANTITY_OF_ENTITY = 4;
+    private final int QUANTITY_OF_ENTITY = 5;
 
     @Before
     public void init() {
