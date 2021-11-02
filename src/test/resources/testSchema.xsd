@@ -7,7 +7,7 @@
     <element name="devices">
         <complexType>
             <sequence>
-                <element ref="tns:devices" maxOccurs="unbounded" />
+                <element ref="tns:device" maxOccurs="unbounded" />
             </sequence>
         </complexType>
     </element>
@@ -17,7 +17,7 @@
             <element name="name" type="string" />
             <element name="origin" type="tns:origin" />
             <element name="launch-time" type="gYearMonth" />
-            <element name="price" type="tns:price" />
+            <element name="price" type="int" />
             <element name="power-consumption" type="int" />
             <element name="cooling" type="boolean" />
             <element name="critical" type="boolean" />
@@ -34,7 +34,6 @@
             </extension>
         </complexContent>
     </complexType>
-
     <complexType name="peripheral-device">
         <complexContent>
             <extension base="tns:device">
@@ -46,23 +45,57 @@
         </complexContent>
     </complexType>
 
-
-
-    <complexType name="origin"></complexType>
-
-    <complexType name="price"></complexType>
-    <complexType name="peripheral-device-type"></complexType>
-
-    <simpleType name="port" final="restriction">
+    <simpleType name="name">
         <restriction base="string">
-            <enumeration value="COM"/>
-            <enumeration value="USB"/>
-            <enumeration value="LPT"/>
+            <pattern value="([a-zA-Z\s]{4,26})"/>
         </restriction>
     </simpleType>
-    <complexType name="peripheral-device-port">
-        <sequence>
-            <element name="Port" type="tns:port" />
-        </sequence>
-    </complexType>
+
+    <simpleType name="launch-time">
+        <restriction base="gYearMonth">
+            <pattern value="([\d]{4}[\-][\d]{2})"/>
+        </restriction>
+    </simpleType>
+
+
+    <simpleType name="price">
+        <restriction base="string">
+            <pattern value="[\d+]{1,8}"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="origin">
+        <restriction base="string">
+            <enumeration value="USA" />
+            <enumeration value="Germany" />
+            <enumeration value="China" />
+            <enumeration value="Taiwan" />
+            <enumeration value="Japan" />
+        </restriction>
+    </simpleType>
+
+    <simpleType name="integral-device-type">
+        <restriction base="string">
+            <enumeration value="CPU" />
+            <enumeration value="MOTHERBOARD" />
+            <enumeration value="RAM" />
+        </restriction>
+    </simpleType>
+
+    <simpleType name="peripheral-device-type">
+        <restriction base="string">
+            <enumeration value="MULTIMEDIA" />
+            <enumeration value="INPUT_OUTPUT" />
+        </restriction>
+    </simpleType>
+
+    <simpleType name="peripheral-device-port">
+        <restriction base="string">
+            <enumeration value="COM" />
+            <enumeration value="USB" />
+            <enumeration value="LPT" />
+        </restriction>
+    </simpleType>
+
+    <element name="device"></element>
 </schema>
