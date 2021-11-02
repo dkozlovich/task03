@@ -2,6 +2,8 @@ package com.epam.task03.builder;
 
 import com.epam.task03.entity.*;
 import com.epam.task03.exception.DeviceException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -13,6 +15,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class DevicesDomBuilder extends AbstractDeviceBuilder {
+
+    private static final Logger logger = LogManager.getLogger();
 
     private Set<Device> devices = new HashSet<>();
 
@@ -26,6 +30,7 @@ public class DevicesDomBuilder extends AbstractDeviceBuilder {
         File file = new File(path);
         Document doc;
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+        logger.info("Start parsing with DOM Parser");
         try {
             doc = dbf.newDocumentBuilder().parse(file);
             doc.getDocumentElement().normalize();
@@ -71,7 +76,9 @@ public class DevicesDomBuilder extends AbstractDeviceBuilder {
                     }
                 }
             }
+            logger.info("Parsing successfully done");
         } catch (Exception e) {
+            logger.info("Error during parsing: " + e.getMessage());
             throw new DeviceException(e);
         }
     }

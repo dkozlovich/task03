@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema"
-        targetNamespace="http://www.example.com/gems"
-        xmlns:tns="http://www.example.com/gems"
-        elementFormDefault="qualified">
-
-</schema>

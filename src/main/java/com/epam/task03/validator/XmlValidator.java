@@ -20,7 +20,7 @@ public class XmlValidator {
     private static final Logger logger = LogManager.getLogger();
 
     public static boolean isValidXML(String xmlFilePath, String schemaPath) throws DeviceException {
-        String language = XMLConstants.W3C_XML_SCHEMA_INSTANCE_NS_URI;
+        String language = XMLConstants.W3C_XML_SCHEMA_NS_URI;
         SchemaFactory factory = SchemaFactory.newInstance(language);
         File schemaLocation = new File(schemaPath);
 

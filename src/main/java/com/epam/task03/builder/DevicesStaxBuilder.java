@@ -2,6 +2,8 @@ package com.epam.task03.builder;
 
 import com.epam.task03.entity.*;
 import com.epam.task03.exception.DeviceException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.xml.namespace.QName;
 import javax.xml.stream.*;
@@ -15,6 +17,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class DevicesStaxBuilder extends AbstractDeviceBuilder {
+
+    private static final Logger logger = LogManager.getLogger();
 
     private Set<Device> devices = new HashSet<>();
 
@@ -30,6 +34,7 @@ public class DevicesStaxBuilder extends AbstractDeviceBuilder {
     @Override
     public void buildSetDevices(String path) throws DeviceException {
         XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();
+        logger.info("Start parsing with StAX Parser");
         try {
             XMLEventReader xmlEventReader = xmlInputFactory.createXMLEventReader(new FileInputStream(path));
             while (xmlEventReader.hasNext()) {
@@ -141,8 +146,9 @@ public class DevicesStaxBuilder extends AbstractDeviceBuilder {
                     }
                 }
             }
-            System.out.println("");
+            logger.info("Parsing successfully done");
         } catch (Exception e) {
+            logger.info("Error during parsing: " + e.getMessage());
             throw new DeviceException(e);
         }
     }

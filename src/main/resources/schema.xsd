@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.example.com/gems"
+        xmlns:tns="http://www.example.com/gems"
+        elementFormDefault="qualified">
+
+    <element name="devices">
+        <complexType>
+            <sequence>
+                <element ref="tns:devices" maxOccurs="unbounded" />
+            </sequence>
+        </complexType>
+    </element>
+
+    <complexType name="device">
+        <sequence>
+            <element name="name" type="string" />
+            <element name="origin" type="tns:origin" />
+            <element name="launch-time" type="gYearMonth" />
+            <element name="price" type="tns:price" />
+            <element name="power-consumption" type="int" />
+            <element name="cooling" type="boolean" />
+            <element name="critical" type="boolean" />
+        </sequence>
+    </complexType>
+
+    <complexType name="integral-device">
+        <complexContent>
+            <extension base="tns:device">
+                <sequence>
+                    <element name="integral-device-type"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <complexType name="peripheral-device">
+        <complexContent>
+            <extension base="tns:device">
+                <sequence>
+                    <element name="peripheral-device-type" type="tns:peripheral-device-type"/>
+                    <element name="peripheral-device-port" type="tns:peripheral-device-port"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+
+
+
+    <complexType name="origin"></complexType>
+
+    <complexType name="price"></complexType>
+    <complexType name="peripheral-device-type"></complexType>
+
+    <simpleType name="port" final="restriction">
+        <restriction base="string">
+            <enumeration value="COM"/>
+            <enumeration value="USB"/>
+            <enumeration value="LPT"/>
+        </restriction>
+    </simpleType>
+    <complexType name="peripheral-device-port">
+        <sequence>
+            <element name="Port" type="tns:port" />
+        </sequence>
+    </complexType>
+</schema>
