@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<devices xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<devices xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.example.com/devices testDevices.xml">
 
     <integral-device id = '1'>
         <name>Memory Crucial 16Gb</name>

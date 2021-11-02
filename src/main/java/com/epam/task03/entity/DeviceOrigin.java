@@ -5,5 +5,6 @@ public enum DeviceOrigin {
     GERMANY,
     CHINA,
     TAIWAN,
-    JAPAN;
+    JAPAN,
+    UNKNOWN;
 }

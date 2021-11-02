@@ -15,13 +15,13 @@
     <complexType name="device">
         <sequence>
             <element name="name" type="string" />
-            <element name="origin" type="tns:origin" />
             <element name="launch-time" type="gYearMonth" />
             <element name="price" type="int" />
             <element name="power-consumption" type="int" />
             <element name="cooling" type="boolean" />
             <element name="critical" type="boolean" />
         </sequence>
+        <attribute name="origin" type="tns:origin" use="optional" default="UNKNOWN" />
         <attribute name="id" type="string" use="required" />
     </complexType>
 
@@ -71,6 +71,7 @@
             <enumeration value="China" />
             <enumeration value="Taiwan" />
             <enumeration value="Japan" />
+            <enumeration value="UNKNOWN" />
         </restriction>
     </simpleType>
 
