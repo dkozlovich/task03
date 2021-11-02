@@ -12,8 +12,9 @@ import org.junit.Test;
 import java.time.YearMonth;
 import java.util.Set;
 
-public class DevicesSaxBuilderTest {
-    private DevicesSaxBuilder saxBuilder;
+public class DevicesStaxBuilderTest {
+
+    private DevicesStaxBuilder staxBuilder;
 
     private final String PATH_TO_XML_FILE = "./src/test/resources/testDevices.xml";
 
@@ -21,18 +22,20 @@ public class DevicesSaxBuilderTest {
 
     @Before
     public void init() {
-        saxBuilder = new DevicesSaxBuilder();
+        staxBuilder = new DevicesStaxBuilder();
     }
+
     @Test
     public void testBuildSetDevices() throws DeviceException {
-        saxBuilder.buildSetDevices(PATH_TO_XML_FILE);
-        Assert.assertEquals(QUANTITY_OF_ENTITY, saxBuilder.getDevices().size());
+        staxBuilder.buildSetDevices(PATH_TO_XML_FILE);
+        Set<Device> devices = staxBuilder.getDevices();
+        Assert.assertEquals(QUANTITY_OF_ENTITY, staxBuilder.getDevices().size());
     }
 
     @Test
     public void testBuildSetDevices2() throws DeviceException {
-        saxBuilder.buildSetDevices(PATH_TO_XML_FILE);
-        Set<Device> result = saxBuilder.getDevices();
+        staxBuilder.buildSetDevices(PATH_TO_XML_FILE);
+        Set<Device> result = staxBuilder.getDevices();
         IntegralDevice expected = new IntegralDevice();
         expected.setId("11");
         expected.setName("Motherboard Gigabyte B450M");
@@ -45,6 +48,5 @@ public class DevicesSaxBuilderTest {
         expected.setDeviceType(IntegralDeviceType.MOTHERBOARD);
         Assert.assertTrue(result.contains(expected));
     }
-
-
 }
+

@@ -2,7 +2,6 @@ package com.epam.task03.handler;
 
 import com.epam.task03.entity.*;
 import org.xml.sax.Attributes;
-import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 import java.time.YearMonth;
@@ -11,11 +10,11 @@ import java.util.Set;
 
 public class DevicesHandler extends DefaultHandler {
 
-    Set<Device> devices = new HashSet<>();
+    private Set<Device> devices = new HashSet<>();
 
-    IntegralDevice currentIntegralDevice;
+    private IntegralDevice currentIntegralDevice;
 
-    PeripheralDevice currentPeripheralDevice;
+    private PeripheralDevice currentPeripheralDevice;
 
     private StringBuilder currentValue = new StringBuilder();
 

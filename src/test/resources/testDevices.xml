@@ -2,18 +2,18 @@
 <devices xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
     <integral-device id = '1'>
-        <name>Memory 16Gb</name>
+        <name>Memory Crucial 16Gb</name>
         <origin>China</origin>
         <launch-time>2020-01</launch-time>
         <price>100</price>
         <power-consumption>3</power-consumption>
         <cooling>false</cooling>
-        <critical>false</critical>
+        <critical>true</critical>
         <integral-device-type>RAM</integral-device-type>
     </integral-device>
 
     <peripheral-device id = '2'>
-        <name>Mouse</name>
+        <name>Mouse Razer Basilisk</name>
         <origin>China</origin>
         <launch-time>2021-01</launch-time>
         <price>150</price>
@@ -25,7 +25,7 @@
     </peripheral-device>
 
     <peripheral-device id = '3'>
-        <name>Keyboard</name>
+        <name>Keyboard Logitech K780</name>
         <origin>Taiwan</origin>
         <launch-time>2021-03</launch-time>
         <price>50</price>
@@ -37,8 +37,8 @@
     </peripheral-device>
 
     <peripheral-device id = '4'>
-        <name>Audio device</name>
-        <origin>China</origin>
+        <name>Sony Audio device</name>
+        <origin>Japan</origin>
         <launch-time>2018-01</launch-time>
         <price>200</price>
         <power-consumption>55</power-consumption>
@@ -49,14 +49,138 @@
     </peripheral-device>
 
     <integral-device id = '5'>
-        <name>Memory 8Gb</name>
+        <name>Memory Hynix 8Gb</name>
         <origin>China</origin>
         <launch-time>2021-06</launch-time>
         <price>60</price>
         <power-consumption>3</power-consumption>
         <cooling>false</cooling>
-        <critical>false</critical>
+        <critical>true</critical>
         <integral-device-type>RAM</integral-device-type>
     </integral-device>
+
+    <peripheral-device id = '6'>
+        <name>Mouse Logitech G Pro</name>
+        <origin>China</origin>
+        <launch-time>2016-01</launch-time>
+        <price>100</price>
+        <power-consumption>3</power-consumption>
+        <cooling>false</cooling>
+        <critical>false</critical>
+        <peripheral-device-type>INPUT_OUTPUT</peripheral-device-type>
+        <peripheral-device-port>USB</peripheral-device-port>
+    </peripheral-device>
+
+    <integral-device id = '7'>
+        <name>CPU Intel i5-11400</name>
+        <origin>USA</origin>
+        <launch-time>2021-06</launch-time>
+        <price>200</price>
+        <power-consumption>65</power-consumption>
+        <cooling>true</cooling>
+        <critical>true</critical>
+        <integral-device-type>CPU</integral-device-type>
+    </integral-device>
+
+    <integral-device id = '8'>
+        <name>CPU Intel i5-11600k</name>
+        <origin>USA</origin>
+        <launch-time>2021-04</launch-time>
+        <price>250</price>
+        <power-consumption>125</power-consumption>
+        <cooling>true</cooling>
+        <critical>true</critical>
+        <integral-device-type>CPU</integral-device-type>
+    </integral-device>
+
+    <integral-device id = '9'>
+        <name>CPU AMD Ryzen 5 3400G</name>
+        <origin>USA</origin>
+        <launch-time>2021-03</launch-time>
+        <price>300</price>
+        <power-consumption>65</power-consumption>
+        <cooling>true</cooling>
+        <critical>true</critical>
+        <integral-device-type>CPU</integral-device-type>
+    </integral-device>
+
+    <integral-device id = '10'>
+        <name>CPU AMD Ryzen 5 3600</name>
+        <origin>USA</origin>
+        <launch-time>2021-09</launch-time>
+        <price>250</price>
+        <power-consumption>65</power-consumption>
+        <cooling>true</cooling>
+        <critical>true</critical>
+        <integral-device-type>CPU</integral-device-type>
+    </integral-device>
+
+    <integral-device id = '11'>
+        <name>Motherboard Gigabyte B450M</name>
+        <origin>USA</origin>
+        <launch-time>2020-09</launch-time>
+        <price>50</price>
+        <power-consumption>15</power-consumption>
+        <cooling>false</cooling>
+        <critical>true</critical>
+        <integral-device-type>Motherboard</integral-device-type>
+    </integral-device>
+
+    <integral-device id = '12'>
+        <name>Motherboard ASRock B560M</name>
+        <origin>USA</origin>
+        <launch-time>2020-09</launch-time>
+        <price>90</price>
+        <power-consumption>15</power-consumption>
+        <cooling>false</cooling>
+        <critical>true</critical>
+        <integral-device-type>Motherboard</integral-device-type>
+    </integral-device>
+
+    <integral-device id = '13'>
+        <name>Motherboard Asus Prime B450M</name>
+        <origin>USA</origin>
+        <launch-time>2020-09</launch-time>
+        <price>50</price>
+        <power-consumption>15</power-consumption>
+        <cooling>false</cooling>
+        <critical>true</critical>
+        <integral-device-type>Motherboard</integral-device-type>
+    </integral-device>
+
+    <integral-device id = '14'>
+        <name>Motherboard MSI MAG B550</name>
+        <origin>USA</origin>
+        <launch-time>2020-09</launch-time>
+        <price>200</price>
+        <power-consumption>15</power-consumption>
+        <cooling>false</cooling>
+        <critical>true</critical>
+        <integral-device-type>Motherboard</integral-device-type>
+    </integral-device>
+
+    <peripheral-device id = '15'>
+        <name>Yamaha Audio device</name>
+        <origin>Japan</origin>
+        <launch-time>2018-01</launch-time>
+        <price>1200</price>
+        <power-consumption>555</power-consumption>
+        <cooling>false</cooling>
+        <critical>false</critical>
+        <peripheral-device-type>MULTIMEDIA</peripheral-device-type>
+        <peripheral-device-port>USB</peripheral-device-port>
+    </peripheral-device>
+
+    <peripheral-device id = '16'>
+        <name>Sven Audio device</name>
+        <origin>China</origin>
+        <launch-time>2018-01</launch-time>
+        <price>5</price>
+        <power-consumption>3</power-consumption>
+        <cooling>false</cooling>
+        <critical>false</critical>
+        <peripheral-device-type>MULTIMEDIA</peripheral-device-type>
+        <peripheral-device-port>USB</peripheral-device-port>
+    </peripheral-device>
 
 </devices>

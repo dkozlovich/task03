@@ -65,8 +65,8 @@ public class DevicesDomBuilder extends AbstractDeviceBuilder {
                         int powerConsumption = Integer.parseInt(eElement.getElementsByTagName("power-consumption").item(0).getTextContent());
                         boolean cooling = Boolean.parseBoolean(eElement.getElementsByTagName("cooling").item(0).getTextContent());
                         boolean critical = Boolean.parseBoolean(eElement.getElementsByTagName("critical").item(0).getTextContent());
-                        IntegralDeviceType deviceType = (IntegralDeviceType) IntegralDeviceType.valueOf(eElement
-                                .getElementsByTagName("integral-device-type").item(0).getTextContent());
+                        IntegralDeviceType deviceType = IntegralDeviceType.valueOf(eElement
+                                .getElementsByTagName("integral-device-type").item(0).getTextContent().toUpperCase());
                         devices.add(new IntegralDevice(id, name, origin, launchTime, price, powerConsumption, cooling, critical, deviceType));
                     }
                 }
